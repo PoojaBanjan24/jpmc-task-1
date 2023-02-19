@@ -33,8 +33,6 @@ from socketserver import ThreadingMixIn
 
 import dateutil.parser
 
-################################################################################
-#
 # Config
 
 # Sim params
@@ -53,9 +51,6 @@ FREQ = (12, 36, 50)
 
 OVERLAP = 4
 
-
-################################################################################
-#
 # Test Data
 
 def bwalk(min, max, std):
@@ -86,9 +81,6 @@ def orders(hist):
         size = int(abs(normalvariate(0, 100)))
         yield t, stock, side, order, size
 
-
-################################################################################
-#
 # Order Book
 
 def add_book(book, order, size, _age=10):
@@ -141,9 +133,6 @@ def order_book(orders, book, stock_name):
         bids, asks = clear_book(**book)
         yield t, bids, asks
 
-
-################################################################################
-#
 # Test Data Persistence
 
 def generate_csv():
@@ -240,9 +229,6 @@ def run(routes, host='0.0.0.0', port=8080):
     server.start()
     server.waitForThread()
 
-
-################################################################################
-#
 # App
 
 ops = {
@@ -329,8 +315,6 @@ class App(object):
             }]
 
 
-################################################################################
-#
 # Main
 
 if __name__ == '__main__':
